@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+
+    <h1>Weather Dashboard</h1>
+    <div class="row2"></div>
+    <div class="col">
+        <div class="column left">
+            <ol>
+                <li>
+                    <h2>Search for city</h2>
+                </li>
+                <li>
+                    <div class="row1"></div>
+                    <div class="col-4">
+                        <div class="wrapper">
+                            <input type="text" class="z-input" id="zinput" placeholder="Enter City">
+                            <div class="searchBtn" id="search-Btn">
+                                <i class="fas fa-search"></i>
+                            </div>
+                </li>
+                <li>
+                    <div class="row2"></div>
+                    <div class="col">
+                        <div class="recent-search">Recent Searches</div>
+                </li>
+                <div class="row2"></div>
+                <div class="col">
+
+                </div>
+                <li>
+                    <div class="row2"></div>
+                    <div class="col">
+                        <div class="btn-group-vertical" id="btnGroupVertical">
+                            <button class="btn1" id="btn-1"></button>
+                            <button class="btn2" id="btn-2"></button>
+                            <button class="btn3" id="btn-3"></button>
+                            <button class="btn4" id="btn-4"></button>
+                            <button class="btn5" id="btn-5"></button>
+                            <button class="btn6" id="btn-6"></button>
+                            <button class="btn7" id="btn-7"></button>
+                            <button class="btn8" id="btn-8"></button>
+                            <button class="btn9" id="btn-9"></button>
+                            <button class="btn10" id="btn-10"></button>
+                            
+
+
+                        </div>
+                    </div>
+                </li>
+                <li></li>
+            </ol>
+        </div>
+        <div class="row2"></div>
+        <div class="col">
+            <div class="column right">
+                <ol>
+                    <li>
+                        <div class="col">
+                            <div class="jumbotron">
+                                <div class="container">
+                                    <h2 class="display-4"></h2>
+                                    <div class="city"></div>
+                                    <div class="weather-icon2"><img src="icons/unknown.png" alt="weather Icon"></div>
+                                    <div class="temp"></div>
+                                    <div class="humidity"></div>
+                                    <div class="wind"></div>
+                                    <div class="uvIndex"></div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="row2"></div>
+                    <div class="col">
+                        <li>
+                            <div class="column">
+                                <div class="card-deck">
+                                    <div class="card">
+                                        
+                                        <div class="card-body">
+                                            <div class="date1"></div>
+                                            <div class="temp1"></div>
+                                            <div class="weather-icon"><img src="03d.png" alt="weather Icon"></div>
+                                            <div class="humidity1"></div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        
+                                        <div class="card-body">
+                                            <div class="date2"></div>
+                                            <div class="temp2"></div>
+                                            <div class="humidity2"></div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        
+                                        <div class="card-body">
+                                            <div class="date3"></div>
+                                            <div class="temp3"></div>
+                                            <div class="humidity3"></div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                       
+                                        <div class="card-body">
+                                            <div class="date4"></div>
+                                            <div class="temp4"></div>
+                                            <div class="humidity4"></div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        
+                                        <div class="card-body">
+                                            <div class="date5"></div>
+                                            <div class="temp5"></div>
+                                            <div class="humidity5"></div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </li>
+                </ol>
+
+
+
+
+
+
+
+
+
+
+                <script src="./lib/moment/moment.min.js"></script>
+                <script src="./index2.js"></script>
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous"></script>
+</body>
+
+</html>

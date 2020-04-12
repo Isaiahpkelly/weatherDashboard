@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+
+.card {
+    
+    width: 5%;
+    height: 25%;
+    border: 3px solid gray;
+    background-color: #acc4dd75;
+    
+}
+
+h1{
+    background-color: rgba(15, 14, 14, 0.911);
+    color: white;
+    text-align: center;
+}
+
+.wrapper{
+    position: absolute;
+    
+   
+    background: rgba(0,0,0,0.3);
+    max-width: 200px;
+    width: 195px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper .z-input{
+width: 95%;
+padding: 15px 20px;
+border: none;
+border-radius: 5px;
+font-weight: bold;
+}
+
+.searchBtn{
+    background: #858583d7;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.searchBtn .fas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card1{
+    position: absolute;
+    top: 110px; 
+    display: flex;
+    
+}
+
+
+.list-group-item {
+    background-color: #fff;
+}
+.card3{
+    background-color: white;
+    
+}
+.card-header{
+    background-color:rgb(14, 13, 13);
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+.column {
+    float: left;
+    padding: 10px;
+    height: 100%; 
+  }
+  
+  .left {
+    width: 25%;
+  }
+  
+  .right {
+    width: 75%;
+    
+  }
+
+  .btn-group-vertical{
+      width: 68%;
+      background-color: white;
+  }
+
+  .btn-secondary{
+    background-color: white;
+    color: black;
+    width: 68%;
+  }
+  #btnGroupVertical{
+    width: 68%;
+      background-color: white;  
+  }
+
+  #button .movie{
+    width: 68%;
+    background-color: white; 
+  }
