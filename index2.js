@@ -58,9 +58,9 @@ function work(){
             console.log(response.weather[0].description);
             console.log(response.weather[0].icon);
             
-           
+          
             $(".city").text(response.name + " (" + currentDate + ")");
-            $(".wind").text("Wind Speed: " +  response.wind.speed);
+            $(".wind").text("Wind Speed: " +  response.wind.speed + " MPH");
             $(".humidity").text("Humidity: " + response.main.humidity);
             $(".temp").text("Temperature: " + Math.floor(response.main.temp) + " °F");
             
@@ -115,7 +115,14 @@ let queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=Atlanta&unit
         method: "GET"
       }).then(function(response) {
           console.log(response);
+
+          let a = $("<button>");
+
+          a.addClass("uvIndexBtn");
           
+          a.text("UV Index: " + response.value); 
+          $(".uvIndex").append(a);
+
           $(".uvIndex").text("UV Index: " + response.value);  
 
           
