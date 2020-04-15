@@ -12,8 +12,10 @@ let humidityElement = document.querySelector(".humidity");
 let windElement = document.querySelector(".wind");
 let uvIndexElement = document.querySelector(".uvIndex");
 let srchBtn = $(".searchBtn");
-let userInput = $(".z-input").text;
+let userInput = $(".z-input").val().trim();
 let currentLocation = [];
+let lastInput = localStorage.getItem('cityName');
+work()
 
 if(`geolocation` in navigator){
   navigator.geolocation.getCurrentPosition( setPosition, showError);
@@ -21,19 +23,23 @@ if(`geolocation` in navigator){
 alert("Browser Doesn't support Geolocation");
 }
 
+
 function setPosition(position){
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  
+ show(); 
 }
+
 $(document).ready(function(){
-  displayBlocks()
-  let savelocation = localStorage.getItem("zinput")
+ 
+  let savelocation = localStorage.getItem(userInput)
   $("#btn-1").val(savelocation)
+  console.log(savelocation);
+ 
 })
 
-
-  let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Atlanta,us&units=imperial&appid=" + APIKey;
+function work(){
+  let queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+lastInput+",us&units=imperial&appid=" + APIKey;
   
   
   $.ajax({
@@ -52,7 +58,7 @@ $(document).ready(function(){
             console.log(response.weather[0].description);
             console.log(response.weather[0].icon);
             
-            $(".weather-icon2").html= `<img src="icons/${response.weather[0].icon}.png"/>`
+           
             $(".city").text(response.name + " (" + currentDate + ")");
             $(".wind").text("Wind Speed: " +  response.wind.speed);
             $(".humidity").text("Humidity: " + response.main.humidity);
@@ -65,6 +71,7 @@ $(document).ready(function(){
             console.log("Humidity: " + response.main.humidity);
             
           });
+        }
 function showError(error){
   alert("Browser Doesn't support Geolocation");
 }
@@ -118,48 +125,69 @@ let queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=Atlanta&unit
       $("#search-Btn").on("click", function(event) {
         
         event.preventDefault();
+        location.reload(true);
+        $("#btnGroupVertical").empty();
           
         let storeLocation = $(".z-input").val().trim();
         currentLocation.push(storeLocation);
-        var value = $(this).siblings('.z-input').val();
-        var id = $(this).siblings('.z-input').attr('id');
-        localStorage.setItem(id, value)
+        localStorage.setItem("cityName", currentLocation);
+
+        let locationToShow = localStorage.getItem('cityName');
+        $(neededInfo).append(localStorage.getItem('cityName'));
+
+        
+        
         renderButtons();
-            console.log(storeLocation);
+        
+            console.log(locationToShow);
       });
 
-      function alertMovieName() {
-        var locationName = $(this).attr("data-name");
-
-        alert(locationName);
-      }
+      
       
       function renderButtons() {
 
         
-        $("#buttons-view").empty();
         
-
-        
-      }
-      function show(){
-        let locationToShow = localStorage.getItem('data');
-        $('.locationStored').append(locationToShow);
-        
-        console.log(locationToShow);
-    }
-
-    function displayBlocks() {
-
-      for (var i = 0; i < currentLocation.length; i++) {
+        for (var i = 0; i < currentLocation.length; i++) {
 
          
-        let a = $("<button>").css({ width: '100%', 'padding-top': '10px', 'padding-bottom': '10px' });
-        a.addClass("locationStored");
-        a.attr("data-name", currentLocation[i]);
-        a.text(currentLocation[i]);
-        $("#btnGroupVertical").append(a);
+          let a = $("<button>").css({ width: '100%', 'padding-top': '10px', 'padding-bottom': '10px' });
+          a.addClass("locationStored");
+          a.attr("data-name", currentLocation[i]);
+          a.text(currentLocation[i]);
+          $("#btnGroupVertical").append(a);
+
+
+        }
+        
       }
+
+      let neededInfo = [];
+
+      function show(){
+        let locationToShow = localStorage.getItem('cityName');
+        $(neededInfo).append(locationToShow);
+
+        for (var i = 0; i < locationToShow.length; i++) {
+
+         
+          let a = $("<button>").css({ width: '100%', 'padding-top': '10px', 'padding-bottom': '10px' });
+          a.addClass("locationStored");
+          a.attr("data-name", currentLocation[i]);
+          a.text(currentLocation[i]);
+          $("#btnGroupVertical").append(a);
+        }
+
+
+        $('.locationStored').append(locationToShow);
+        console.log(locationToShow);
+        
+       
+        console.log(currentLocation);
+        console.log(neededInfo);
+
     }
+
+ 
 
 
