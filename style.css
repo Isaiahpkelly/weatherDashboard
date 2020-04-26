@@ -117,3 +117,11 @@ font-weight: bold;
       outline: none;
   }
   li:only-of-type { list-style-type: none; }
+
+  li.nostyle {
+    list-style-type: none;
+}
+
+.uvIndex{
+    color: red;
+}
